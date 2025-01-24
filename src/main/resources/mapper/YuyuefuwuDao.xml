@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.YuyuefuwuDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.YuyuefuwuEntity" id="yuyuefuwuMap">
+        <result property="kefangbianhao" column="kefangbianhao"/>
+        <result property="kefangmingcheng" column="kefangmingcheng"/>
+        <result property="shijian" column="shijian"/>
+        <result property="fuwuxiangmu" column="fuwuxiangmu"/>
+        <result property="yonghuzhanghao" column="yonghuzhanghao"/>
+        <result property="yonghuxingming" column="yonghuxingming"/>
+        <result property="yuangonggonghao" column="yuangonggonghao"/>
+        <result property="yuangongxingming" column="yuangongxingming"/>
+        <result property="lianxidianhua" column="lianxidianhua"/>
+        <result property="sfsh" column="sfsh"/>
+        <result property="shhf" column="shhf"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.YuyuefuwuVO" >
+		SELECT * FROM yuyuefuwu  yuyuefuwu         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.YuyuefuwuVO" >
+		SELECT  yuyuefuwu.* FROM yuyuefuwu  yuyuefuwu 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.YuyuefuwuView" >
+
+		SELECT  yuyuefuwu.* FROM yuyuefuwu  yuyuefuwu 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.YuyuefuwuView" >
+		SELECT * FROM yuyuefuwu  yuyuefuwu <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+</mapper>
